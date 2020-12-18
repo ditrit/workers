@@ -6,7 +6,19 @@ name: ConnectorConfig8
 connectorproduct:
   name: Custom
   version: 1
-connectortypecommands: []
+connectortypecommands: 
+- model:
+  name: REGISTER
+  schema: '{"$schema":"http://json-schema.org/draft-04/schema#","$ref":"#/definitions/RegisterPayload","definitions":{"RegisterPayload":{"required":["name","content"],"properties":{"name":{"type":"string"},"content":{"type":"string"}},"additionalProperties":false,"type":"object"}}}'
+  actions:
+    - model:
+      name: Execute
+- model:
+  name: EXECUTE
+  schema: '{"$schema":"http://json-schema.org/draft-04/schema#","$ref":"#/definitions/ExecutePayload","definitions":{"ExecutePayload":{"required":["name"],"properties":{"name":{"type":"string"}},"additionalProperties":false,"type":"object"}}}'
+  actions:
+    - model:
+      name: Execute
 connectortypeevents: []
 actions:
 - model:
